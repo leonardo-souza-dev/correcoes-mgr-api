@@ -42,6 +42,7 @@ try
     var caminhoArquivoDb = ObterCaminhoArquivoDb(nameof(Correcao));
 
 
+
     // endpoints
     app.MapGet("/correcoes", () =>
     {
@@ -62,7 +63,7 @@ try
 
     static string ObterCaminhoArquivoDb(string entidade)
     {
-        string nomeAssembly = Assembly.GetEntryAssembly().GetName().Name;
+        string? nomeAssembly = Assembly.GetEntryAssembly()?.GetName().Name;
         var nomeDb = $"{nomeAssembly}-{entidade.ToLower()}.db";
 
         return $"{Directory.GetCurrentDirectory()}/{nomeDb}";

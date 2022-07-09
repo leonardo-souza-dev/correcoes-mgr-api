@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteAbstractCrud", "SQLit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteAbstractCrud.Tests", "SQLiteAbstractCrud.Tests\SQLiteAbstractCrud.Tests.csproj", "{35DA8B53-86FC-4634-9E12-8CEBD7D31EDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrecoesMrg.Domain", "CorrecoesMrg.Domain\CorrecoesMrg.Domain.csproj", "{94D40753-C4B0-4BBF-B3F0-FDF89F6E742E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrecoesMrg.Domain", "CorrecoesMrg.Domain\CorrecoesMrg.Domain.csproj", "{94D40753-C4B0-4BBF-B3F0-FDF89F6E742E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - outros", "0 - outros", "{DC13C9C4-7ED2-4A9D-BA51-50D0AA68723C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

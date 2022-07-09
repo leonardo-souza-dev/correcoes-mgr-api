@@ -5,7 +5,11 @@ project.lock.json
 *.pyc
 nupkg/
 
+<<<<<<< HEAD
 # Visual Studio Code
+=======
+# VS Code
+>>>>>>> f348389fb345a91e142678da9ef3c0a54e609455
 .vscode
 
 # Rider
