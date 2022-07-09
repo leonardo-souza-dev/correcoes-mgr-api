@@ -37,19 +37,19 @@ namespace SQLiteAbstractCrud.Tests
             var novoValorCampoBool = false;
 
             // act
-            _ = sut.Update(entidade, nameof(entidade.CampoBool), novoValorCampoBool);
+            _ = sut.Update(entidade, nameof(entidade.BoolField), novoValorCampoBool);
 
             // assert
             var entidadeInserida = sut.Get(campoDateTime);
             Assert.NotNull(entidadeInserida);
-            Assert.AreEqual(campoDateTime.Year, entidadeInserida.CampoDateTime.Year);
-            Assert.AreEqual(campoDateTime.Month, entidadeInserida.CampoDateTime.Month);
-            Assert.AreEqual(campoDateTime.Day, entidadeInserida.CampoDateTime.Day);
-            Assert.AreEqual(campoDateTime.Hour, entidadeInserida.CampoDateTime.Hour);
-            Assert.AreEqual(campoDateTime.Minute, entidadeInserida.CampoDateTime.Minute);
-            Assert.AreEqual(campoDateTime.Second, entidadeInserida.CampoDateTime.Second);
-            Assert.AreEqual(campoDateTime.Millisecond, entidadeInserida.CampoDateTime.Millisecond);
-            Assert.AreEqual(novoValorCampoBool, entidadeInserida.CampoBool);
+            Assert.AreEqual(campoDateTime.Year, entidadeInserida.DateTimeField.Year);
+            Assert.AreEqual(campoDateTime.Month, entidadeInserida.DateTimeField.Month);
+            Assert.AreEqual(campoDateTime.Day, entidadeInserida.DateTimeField.Day);
+            Assert.AreEqual(campoDateTime.Hour, entidadeInserida.DateTimeField.Hour);
+            Assert.AreEqual(campoDateTime.Minute, entidadeInserida.DateTimeField.Minute);
+            Assert.AreEqual(campoDateTime.Second, entidadeInserida.DateTimeField.Second);
+            Assert.AreEqual(campoDateTime.Millisecond, entidadeInserida.DateTimeField.Millisecond);
+            Assert.AreEqual(novoValorCampoBool, entidadeInserida.BoolField);
         }
 
         [Test]
@@ -66,8 +66,8 @@ namespace SQLiteAbstractCrud.Tests
 
             // assert
             Assert.AreEqual(2, actual.Count());
-            Assert.AreEqual(10, actual.FirstOrDefault(x => x.CampoBool).CampoDateTime.Day);
-            Assert.AreEqual(20, actual.FirstOrDefault(x => !x.CampoBool).CampoDateTime.Day);
+            Assert.AreEqual(10, actual.FirstOrDefault(x => x.BoolField).DateTimeField.Day);
+            Assert.AreEqual(20, actual.FirstOrDefault(x => !x.BoolField).DateTimeField.Day);
         }
 
         [Test]
@@ -110,14 +110,15 @@ namespace SQLiteAbstractCrud.Tests
 
     public class Test2Fields_DateTimePk_Bool
     {
-        public bool CampoBool { get; }
-        [PrimaryKey]
-        public DateTime CampoDateTime { get; }
+        public bool BoolField { get; }
 
-        public Test2Fields_DateTimePk_Bool(bool bar, DateTime foo)
+        [PrimaryKey]
+        public DateTime DateTimeField { get; }
+
+        public Test2Fields_DateTimePk_Bool(bool boolField, DateTime dateTimeField)
         {
-            CampoDateTime = foo;
-            CampoBool = bar;
+            DateTimeField = dateTimeField;
+            BoolField = boolField;
         }
     }
 }

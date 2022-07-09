@@ -35,7 +35,8 @@ namespace SQLiteAbstractCrud
 
         public virtual T Insert(T t)
         {
-            long lastInsertedId = 0;
+            object rawValue = null;
+
             using (SQLiteConnection con = new(_dataSource))
             { 
                 con.Open();
@@ -48,10 +49,12 @@ namespace SQLiteAbstractCrud
                     cmd.ExecuteNonQuery();
                 }
 
-                lastInsertedId = GetLastInsertedId(con);
+                var pkName = _fields.GetPrimaryKeyName();
+
+                rawValue = t.GetType().GetProperty(pkName).GetValue(t, null);
             }
 
-            var tInserted = Get(lastInsertedId);
+            var tInserted = Get(rawValue);
             return tInserted;
         }
 
