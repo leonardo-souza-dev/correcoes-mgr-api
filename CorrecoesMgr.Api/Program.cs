@@ -42,6 +42,7 @@ try
     var caminhoArquivoDb = ObterCaminhoArquivoDb(nameof(Correcao));
 
 
+
     // endpoints
     app.MapGet("/correcoes", () =>
     {
@@ -62,7 +63,7 @@ try
 
     static string ObterCaminhoArquivoDb(string entidade)
     {
-        string nomeAssembly = Assembly.GetEntryAssembly().GetName().Name;
+        string? nomeAssembly = Assembly.GetEntryAssembly()?.GetName().Name;
         var nomeDb = $"{nomeAssembly}-{entidade.ToLower()}.db";
 
         return $"{Directory.GetCurrentDirectory()}/{nomeDb}";
@@ -71,7 +72,7 @@ try
     static string ObterCaminhoDbDev()
     {
         var pastaRaiz = "";
-        var pastaAtual = Directory.GetCurrentDirectory();
+        string pastaAtual = Directory.GetCurrentDirectory();
         var ehPastaRaiz = false;
 
         List<string> arquivos;
