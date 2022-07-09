@@ -1,6 +1,5 @@
 using CorrecoesMgr.Domain;
 
-
 namespace CorrecoesMgr.Dto
 {
     public class CorrecaoDto

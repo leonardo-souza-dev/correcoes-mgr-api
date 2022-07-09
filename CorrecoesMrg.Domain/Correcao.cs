@@ -2,7 +2,6 @@
 
 namespace CorrecoesMgr.Domain
 {
-
     public class Correcao
     {
         public string Curso { get; set; }
