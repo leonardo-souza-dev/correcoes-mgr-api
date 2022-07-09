@@ -1,0 +1,1 @@
+﻿# correcoes-mgr-api
