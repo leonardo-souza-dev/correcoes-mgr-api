@@ -1,17 +1,16 @@
 using System.Diagnostics;
 using System.Reflection;
-using CorrecoesMgr.Dto;
 using CorrecoesMgr.Repository;
 using CorrecoesMgr.Domain;
 
 try
 {
     // builder
-    var MyAllowSpecificOrigins = "_loremIpsum";
+    var myAllowSpecificOrigins = "_loremIpsum";
     var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddCors(options =>
     {
-        options.AddPolicy(name: MyAllowSpecificOrigins,
+        options.AddPolicy(name: myAllowSpecificOrigins,
                           policy =>
                           {
                               policy
@@ -24,8 +23,6 @@ try
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
-
-
     // app
     var app = builder.Build();
     if (app.Environment.IsDevelopment())
@@ -34,29 +31,17 @@ try
         app.UseSwaggerUI();
     }
     app.UseHttpsRedirection();
-    app.UseCors(MyAllowSpecificOrigins);
-
-
+    app.UseCors(myAllowSpecificOrigins);
 
     // variaveis
     var caminhoArquivoDb = ObterCaminhoArquivoDb(nameof(Correcao));
 
+    // controller
+    _ = new CorrecaoController(
+        app,
+        new CorrecaoRepository(caminhoArquivoDb),
+        new ModuloValorRepository(caminhoArquivoDb));
 
-
-    // endpoints
-    app.MapGet("/correcoes", () =>
-    {
-        return Results.Ok(new CorrecaoRepository(caminhoArquivoDb).GetAll());
-    });
-
-    app.MapPut("/inserir-correcao", (CorrecaoDto correcaoDto) =>
-    {
-        var correcao = correcaoDto.ToModel();
-
-        var correcaoInserida = new CorrecaoRepository(caminhoArquivoDb).Insert(correcao);
-
-        return Results.Ok(correcaoInserida);
-    });
 
     app.Run();
 

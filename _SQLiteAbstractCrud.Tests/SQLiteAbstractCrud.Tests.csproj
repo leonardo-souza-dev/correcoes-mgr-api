@@ -23,9 +23,6 @@
     <None Remove="NUnit3TestAdapter" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SQLiteAbstractCrud\SQLiteAbstractCrud.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Remove="Teste1CampoStrPk\**" />
     <EmbeddedResource Remove="Teste2CamposStrInt\**" />
     <EmbeddedResource Remove="Teste3CamposStrIntStr\**" />
