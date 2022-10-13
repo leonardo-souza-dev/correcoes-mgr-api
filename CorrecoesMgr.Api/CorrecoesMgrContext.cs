@@ -19,5 +19,18 @@ namespace CorrecoesMgr.Api
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite($"Data Source={DbPath}");
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ValorModulo>().HasData(
+                new ValorModulo
+                {
+                    Curso = "Backend Java",
+                    Tipo = "Tarefa do módulo",
+                    NumModulo = 1,
+                    Valor = 15
+                }
+            );
+        }
     }
 }
