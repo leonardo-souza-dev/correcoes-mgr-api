@@ -1,5 +1,5 @@
-using CorrecoesMgr.Domain;
 using CorrecoesMgr.Api;
+using CorrecoesMgr.Api.Models;
 
 namespace CorrecoesMgr.Repository
 {

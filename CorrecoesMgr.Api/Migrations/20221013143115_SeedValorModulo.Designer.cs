@@ -3,6 +3,7 @@ using System;
 using CorrecoesMgr.Api;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,101 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CorrecoesMgr.Api.Migrations
 {
     [DbContext(typeof(CorrecoesMgrContext))]
-    partial class CorrecoesMgrContextModelSnapshot : ModelSnapshot
+    [Migration("20221013143115_SeedValorModulo")]
+    partial class SeedValorModulo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
 
-            modelBuilder.Entity("CorrecoesMgr.Api.Models.Bonus", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Data")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NomeCurso")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Bonus");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Data = "2022-07-01",
-                            NomeCurso = "Backend Java",
-                            Valor = 5
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Data = "2022-07-01",
-                            NomeCurso = "Javascript",
-                            Valor = 7
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Data = "2022-07-01",
-                            NomeCurso = "Unreal Engine",
-                            Valor = 7
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Data = "2022-08-01",
-                            NomeCurso = "Backend Java",
-                            Valor = 46
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Data = "2022-08-01",
-                            NomeCurso = "Javascript",
-                            Valor = 9
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Data = "2022-09-01",
-                            NomeCurso = "Javascript",
-                            Valor = 24
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Data = "2022-09-01",
-                            NomeCurso = "Backend Java",
-                            Valor = 43
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Data = "2022-10-01",
-                            NomeCurso = "Javascript",
-                            Valor = 8
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Data = "2022-10-01",
-                            NomeCurso = "Backend Java",
-                            Valor = 30
-                        });
-                });
-
-            modelBuilder.Entity("CorrecoesMgr.Api.Models.Correcao", b =>
+            modelBuilder.Entity("CorrecoesMgr.Domain.Correcao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -140,7 +55,7 @@ namespace CorrecoesMgr.Api.Migrations
                     b.ToTable("Correcoes");
                 });
 
-            modelBuilder.Entity("CorrecoesMgr.Api.Models.ValorModulo", b =>
+            modelBuilder.Entity("CorrecoesMgr.Domain.ValorModulo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

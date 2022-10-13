@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Reflection;
+using CorrecoesMgr.Api.Models;
 using CorrecoesMgr.Repository;
-using CorrecoesMgr.Domain;
 
 try
 {
