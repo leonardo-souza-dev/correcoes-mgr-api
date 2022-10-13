@@ -1,7 +1,6 @@
-﻿//using SQLiteAbstractCrud.Proxy.Attributes;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CorrecoesMgr.Domain
+namespace CorrecoesMgr.Api.Models
 {
     public class Correcao
     {

@@ -37,10 +37,7 @@ try
     var caminhoArquivoDb = ObterCaminhoArquivoDb(nameof(Correcao));
 
     // controller
-    _ = new CorrecaoController(
-        app,
-        new CorrecaoRepository(caminhoArquivoDb),
-        new ModuloValorRepository(caminhoArquivoDb));
+    _ = new CorrecaoController(app);
 
 
     app.Run();
