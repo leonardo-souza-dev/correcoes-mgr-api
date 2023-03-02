@@ -16,7 +16,7 @@ namespace CorrecoesMgr.Repository
             var correcoesList = new List<Correcao>();
             using (var db = new CorrecoesMgrContext())
             {
-                var correcoes = db.Correcoes.OrderBy(x => x.Id);
+                var correcoes = db.Correcoes.OrderByDescending(x => x.Data);
                 correcoesList = correcoes.ToList();
             }
 
