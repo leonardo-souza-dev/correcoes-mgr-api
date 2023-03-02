@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Reflection;
+using CorrecoesMgr.Api.Models;
 using CorrecoesMgr.Repository;
-using CorrecoesMgr.Domain;
 
 try
 {
@@ -37,10 +37,7 @@ try
     var caminhoArquivoDb = ObterCaminhoArquivoDb(nameof(Correcao));
 
     // controller
-    _ = new CorrecaoController(
-        app,
-        new CorrecaoRepository(caminhoArquivoDb),
-        new ModuloValorRepository(caminhoArquivoDb));
+    _ = new CorrecaoController(app);
 
 
     app.Run();

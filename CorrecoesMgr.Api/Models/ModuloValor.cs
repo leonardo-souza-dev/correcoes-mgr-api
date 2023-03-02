@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CorrecoesMgr.Domain
+namespace CorrecoesMgr.Api.Models
 {
     public class ValorModulo
     {
