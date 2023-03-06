@@ -1,5 +1,6 @@
 ﻿using CorrecoesMgr.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace CorrecoesMgr.Api
 {
@@ -12,9 +13,13 @@ namespace CorrecoesMgr.Api
 
         public CorrecoesMgrContext()
         {
+#if DEBUG
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Environment.GetFolderPath(folder);
             DbPath = Path.Join(path, "correcoes-mgr.db");
+#else
+            DbPath = Path.Join(Environment.CurrentDirectory, "correcoes-mgr.db");
+#endif
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
