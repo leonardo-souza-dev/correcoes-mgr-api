@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorrecoesMgr.Api", "CorrecoesMgr.Api\CorrecoesMgr.Api.csproj", "{1C2A9FDC-4E85-45B9-B98A-8F8F0BF459B5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - outros", "0 - outros", "{DC13C9C4-7ED2-4A9D-BA51-50D0AA68723C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -13,16 +11,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - outros", "0 - outros", 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrecoesMgr.Domain", "CorrecoesMgr.Domain\CorrecoesMgr.Domain.csproj", "{F066DF75-EE23-4011-B478-FA55EE6E7F7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrecoesMgr.Services", "CorrecoesMgr.Services\CorrecoesMgr.Services.csproj", "{5A933F37-BFC5-4587-8AFC-3D76C165EF19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrecoesMgr.Infra", "CorrecoesMgr.Infra\CorrecoesMgr.Infra.csproj", "{ACCEF414-0ECA-4898-B647-215C744AD9F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorrecoesMgr.Api", "CorrecoesMgr.Api\CorrecoesMgr.Api.csproj", "{74D7AA25-B106-4858-B18A-0223DBF83D7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C2A9FDC-4E85-45B9-B98A-8F8F0BF459B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C2A9FDC-4E85-45B9-B98A-8F8F0BF459B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C2A9FDC-4E85-45B9-B98A-8F8F0BF459B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C2A9FDC-4E85-45B9-B98A-8F8F0BF459B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F066DF75-EE23-4011-B478-FA55EE6E7F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F066DF75-EE23-4011-B478-FA55EE6E7F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F066DF75-EE23-4011-B478-FA55EE6E7F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F066DF75-EE23-4011-B478-FA55EE6E7F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A933F37-BFC5-4587-8AFC-3D76C165EF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A933F37-BFC5-4587-8AFC-3D76C165EF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A933F37-BFC5-4587-8AFC-3D76C165EF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A933F37-BFC5-4587-8AFC-3D76C165EF19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACCEF414-0ECA-4898-B647-215C744AD9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACCEF414-0ECA-4898-B647-215C744AD9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACCEF414-0ECA-4898-B647-215C744AD9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACCEF414-0ECA-4898-B647-215C744AD9F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D7AA25-B106-4858-B18A-0223DBF83D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D7AA25-B106-4858-B18A-0223DBF83D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D7AA25-B106-4858-B18A-0223DBF83D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D7AA25-B106-4858-B18A-0223DBF83D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

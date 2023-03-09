@@ -1,8 +1,8 @@
-﻿using CorrecoesMgr.Api.Models;
+﻿using CorrecoesMgr.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace CorrecoesMgr.Api
+namespace CorrecoesMgr.Infra
 {
     public class CorrecoesMgrContext : DbContext
     {

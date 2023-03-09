@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CorrecoesMgr.Api.Migrations
+namespace CorrecoesMgr.Infra.Migrations
 {
     public partial class SeedValorModulo : Migration
     {

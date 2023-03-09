@@ -1,38 +1,43 @@
-using CorrecoesMgr.Api;
-using CorrecoesMgr.Api.Models;
+using CorrecoesMgr.Domain;
+using CorrecoesMgr.Services;
+using Microsoft.AspNetCore.Mvc;
 
-namespace CorrecoesMgr.Repository
+namespace CorrecoesMgr.Api.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class CorrecaoController : ControllerBase
 {
-    public class CorrecaoController
+    private readonly ICorrecaoService _correcaoService;
+
+    public CorrecaoController(ICorrecaoService correcaoService)
+        => _correcaoService = correcaoService;
+
+    [HttpGet]
+    public IResult ObterTodas()
+        => Results.Ok(_correcaoService.ObterTodas());
+
+    [HttpGet("{id}")]
+    public IResult Obter(int id)
+        => Results.Ok(_correcaoService.Obter(id));
+
+    [HttpPost]
+    public IResult Salvar(Correcao correcao)
+        => Results.Ok(_correcaoService.Salvar(correcao));
+
+    [HttpPut]
+    public IResult Atualizar(int id, Correcao correcao)
     {
-        public CorrecaoController(WebApplication app)
+        if (id != correcao.Id)
         {
-            app.MapGet("/correcoes", () => ObterCorrecoes());
-            app.MapPut("/inserir-correcao", (Correcao correcao) => InserirCorrecao(correcao));
+            return Results.BadRequest("Ids diferentes");
         }
 
-        public IResult ObterCorrecoes()
-        {
-            var correcoesList = new List<Correcao>();
-            using (var db = new CorrecoesMgrContext())
-            {
-                var correcoes = db.Correcoes.OrderByDescending(x => x.Data);
-                correcoesList = correcoes.ToList();
-            }
-
-            return Results.Ok(correcoesList);
-        }
-
-        public IResult InserirCorrecao(Correcao correcao)
-        {
-            Correcao correcaoInserida;
-            using (var db = new CorrecoesMgrContext())
-            {
-                correcaoInserida = db.Correcoes.Add(correcao).Entity;
-                db.SaveChanges();
-            }
-
-            return Results.Ok(correcaoInserida);
-        }
+        _correcaoService.Atualizar(correcao);
+        return Results.Ok();
     }
+
+    [HttpDelete]
+    public IResult Deletar(int id)
+        => _correcaoService.Deletar(id) ? Results.Ok() : Results.StatusCode(500);
 }
