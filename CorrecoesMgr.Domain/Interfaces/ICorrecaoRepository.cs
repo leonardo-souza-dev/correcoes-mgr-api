@@ -1,8 +1,8 @@
-﻿using CorrecoesMgr.Domain;
+﻿using CorrecoesMgr.Domain.Entities;
 
 namespace CorrecoesMgr.Infra;
 
-public interface ICorrecaoDao
+public interface ICorrecaoRepository
 {
     List<Correcao> ObterTodas();
     Correcao Obter(int id);

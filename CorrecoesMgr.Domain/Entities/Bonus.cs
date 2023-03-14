@@ -1,4 +1,4 @@
-﻿namespace CorrecoesMgr.Domain;
+﻿namespace CorrecoesMgr.Domain.Entities;
 
 public class Bonus
 {

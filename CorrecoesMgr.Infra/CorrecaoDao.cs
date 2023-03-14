@@ -1,8 +1,8 @@
-﻿using CorrecoesMgr.Domain;
+﻿using CorrecoesMgr.Domain.Entities;
 
 namespace CorrecoesMgr.Infra
 {
-    public class CorrecaoDao : ICorrecaoDao
+    public class CorrecaoDao : ICorrecaoRepository
     {
         public List<Correcao> ObterTodas()
         {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CorrecoesMgr.Domain;
+namespace CorrecoesMgr.Domain.Entities;
 
 [Table("Relatorio")]
 public class Relatorio

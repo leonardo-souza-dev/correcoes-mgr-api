@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CorrecoesMgr.Domain;
+namespace CorrecoesMgr.Domain.Entities;
 
 [Table("Correcoes")]
 public class Correcao
@@ -17,13 +17,13 @@ public class Correcao
     public bool Ativo { get; set; }
 
     public Correcao(
-        int id, 
-        string curso, 
-        DateTime data, 
-        string nomeAluno, 
-        int numModulo, 
+        int id,
+        string curso,
+        DateTime data,
+        string nomeAluno,
+        int numModulo,
         string observacao,
-        string resposta, 
+        string resposta,
         string tipo,
         bool ativo)
     {

@@ -1,5 +1,4 @@
 using CorrecoesMgr.Infra;
-using CorrecoesMgr.Services;
 
 namespace CorrecoesMgr.Api;
 
@@ -12,8 +11,7 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-        builder.Services.AddTransient<ICorrecaoService, CorrecaoService>();
-        builder.Services.AddTransient<ICorrecaoDao, CorrecaoDao>();
+        builder.Services.AddTransient<ICorrecaoRepository, CorrecaoDao>();
 
         //cors
         var myAllowSpecificOrigins = "_loremIpsum";

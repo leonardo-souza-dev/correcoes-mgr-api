@@ -1,4 +1,4 @@
-﻿using CorrecoesMgr.Domain;
+﻿using CorrecoesMgr.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 

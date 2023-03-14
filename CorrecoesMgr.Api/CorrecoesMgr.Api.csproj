@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CorrecoesMgr.Services\CorrecoesMgr.Services.csproj" />
+    <ProjectReference Include="..\CorrecoesMgr.Infra\CorrecoesMgr.Infra.csproj" />
   </ItemGroup>
 
 </Project>
